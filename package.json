@@ -1,0 +1,20 @@
+{
+  "name": "frond",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "source": "src/index.tsx",
+  "repository": "git@github.com:sussexstudent/frond.git",
+  "author": "James Canning <james@brudil.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.3.11",
+    "@types/react-dom": "^16.0.5",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {},
+  "scripts": {
+    "dev": "`yarn bin`/tsc --watch"
+  }
+}
