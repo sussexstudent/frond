@@ -9,12 +9,25 @@
   "devDependencies": {
     "@types/react": "^16.3.11",
     "@types/react-dom": "^16.0.5",
+    "prettier": "^1.12.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "typescript": "^2.8.1"
   },
   "dependencies": {},
   "scripts": {
-    "dev": "`yarn bin`/tsc --watch"
+    "dev": "`yarn bin`/tsc --watch",
+    "format": "`yarn bin`/prettier \"src/**/*.{ts,tsx}\" --write"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "always"
   }
 }

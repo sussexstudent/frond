@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/server';
 import { Frondable, FrondRender, RenderMode } from '.';
 
-interface ExampleProps { initialCount: number }
+interface ExampleProps {
+  initialCount: number;
+}
 
 @Frondable()
 class LocationSayer extends React.Component<{ place: string }, {}> {
   render() {
-    return (
-      <h3>You live, {this.props.place}!</h3>
-    );
+    return <h3>You live, {this.props.place}!</h3>;
   }
 }
 
@@ -26,8 +26,11 @@ class NameSayer extends React.Component<{ name: string }, {}> {
 }
 
 @Frondable({ name: 'ExampleComponent' })
-class ExampleComponent extends React.Component<ExampleProps, { count: number }> {
-  state = { count: 0 }
+class ExampleComponent extends React.Component<
+  ExampleProps,
+  { count: number }
+> {
+  state = { count: 0 };
 
   static getDerivedStateFromProps(props: ExampleProps) {
     return {
@@ -55,9 +58,16 @@ const exampleContent = (
 
 console.log('Passthrough');
 console.log('=====');
-console.log(ReactDOM.renderToStaticMarkup(<FrondRender mode={RenderMode.Passthrough}>{exampleContent}</FrondRender>))
+console.log(
+  ReactDOM.renderToStaticMarkup(
+    <FrondRender mode={RenderMode.Passthrough}>{exampleContent}</FrondRender>,
+  ),
+);
 
 console.log('\n\nStatic');
 console.log('=====');
-console.log(ReactDOM.renderToStaticMarkup(<FrondRender mode={RenderMode.Static}>{exampleContent}</FrondRender>))
-
+console.log(
+  ReactDOM.renderToStaticMarkup(
+    <FrondRender mode={RenderMode.Static}>{exampleContent}</FrondRender>,
+  ),
+);
